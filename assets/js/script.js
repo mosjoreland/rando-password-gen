@@ -11,6 +11,7 @@ var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
 
 
+
 // function that includes all arrays created above
 function generatePassword(lowercaseCharacters, uppercaseCharacters, numericCharacters, specialCharacters) {
 // creates empty array for characters that the user decides to use  
@@ -34,7 +35,7 @@ function generatePassword(lowercaseCharacters, uppercaseCharacters, numericChara
     characters = characters.concat(specialCharacters);
   }
 // creates an alert if the user does not input a correct password length or a number
-  if (isNaN(passwordLength) || passwordLength< 8 || passwordLength > 128) {
+  while (isNaN(passwordLength) || passwordLength< 8 || passwordLength > 128) {
     window.alert('Please enter a valid password length.');
     passwordLength = parseInt(window.prompt('How long do you wish for your password to be?'));
    }
@@ -43,12 +44,10 @@ function generatePassword(lowercaseCharacters, uppercaseCharacters, numericChara
 // creates the loop that generates the password based off users input for passwordLength
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * characters.length);
-    //console.log(`randomIndex = ${randomIndex}`);
     password += characters[randomIndex];
   }
 
-  return password;
-  
+  return password;  
 };
 
 // Write password to the #password input
