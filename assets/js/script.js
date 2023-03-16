@@ -35,10 +35,17 @@ function generatePassword(lowercaseCharacters, uppercaseCharacters, numericChara
   if (includeSpecialCharacters) {
     characters = characters.concat(specialCharacters);
   }
-// creates an alert if the user does not input a correct password length or a number
-  while (isNaN(passwordLength) || passwordLength< 8 || passwordLength > 128) {
+// creates an alert while the user has no character type selected
+// returns nothing until the user chooses correctly
+  while (characters.length === 0) {
+    window.alert('Please select at least one character type or more.');
+    return '';
+  }
+// creates an alert while the user has desired length set, or an incorrect length set
+// returns nothing until the user chooses correctly
+  while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     window.alert('Please enter a valid password length.');
-    passwordLength = parseInt(window.prompt('How long do you wish for your password to be?'));
+    return '';
    }
 
   var password = '';

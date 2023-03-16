@@ -8,4 +8,5 @@
 * I created prompts that ask what the user would like their password to contain
 * I created separate arrays for the character sets
 * I then created a function to generate the password based off of the users input, using if statements that operate when the user confirms a certain prompt. With a for loop to generate the password using the if statements above it.
-* I also added while loop that checks if the user input a number, if the length is less than 8, and if it is greater than 128. If any of them are false it will prompt the user to enter a valid password length.
+* I also added while loop that checks if the user input a number, if the length is less than 8, and if it is greater than 128. If any of them are false it will prompt the user to enter a valid password length and will return a blank value until they do so.
+* I added another while loop to check if the user has selected any characters. If they have not it will prompt them to select at least on character and return a blank value until they do so.
