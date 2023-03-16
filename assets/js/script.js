@@ -1,10 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
-var passwordLength = parseInt(window.prompt('How long do you wish for your password to be?'));
-var includeLowercase = confirm('Do you wish to include lowercase letters in your password?');
-var includeUppercase = confirm('Do you wish to include uppercase letters in your password?');
-var includeNumbers = confirm('Do you wish to include numbers in your password?');
-var includeSpecialCharacters = confirm('Do you wish to include special characters in your password?');
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.',];
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',];
@@ -14,8 +9,14 @@ var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'
 
 // function that includes all arrays created above
 function generatePassword(lowercaseCharacters, uppercaseCharacters, numericCharacters, specialCharacters) {
+    var passwordLength = parseInt(window.prompt('How long do you wish for your password to be?'));
+    var includeLowercase = confirm('Do you wish to include lowercase letters in your password?');
+    var includeUppercase = confirm('Do you wish to include uppercase letters in your password?');
+    var includeNumbers = confirm('Do you wish to include numbers in your password?');
+    var includeSpecialCharacters = confirm('Do you wish to include special characters in your password?');
+        
 // creates empty array for characters that the user decides to use  
-  var characters = [];
+    var characters = [];
 // if statements that confirm whether or not the user wants to include a character type
 // used concat to combine the arrays into the character array
 // originally used += characters.concat which was casuing the array to keep growing with each iteration, changed it to = and added += to the for loop
